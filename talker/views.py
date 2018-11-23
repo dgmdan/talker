@@ -8,10 +8,7 @@ def index(request):
              "color", "help", "she", "dont", "eat", "make", "need", "drink", "turn", "put"]
 
     # build a list of dictionaries with "word" and "image_url" keys
-    word_images = []
-    for word in words:
-        word_images.append({'word': word,
-                            'image_url': '/images/{}.jpg'.format(word)})
+    word_images = [{'word': word, 'image_url': '/images/{}.jpg'.format(word)} for word in words]
 
     return render(request, 'index.html', {'word_images': word_images})
 
